@@ -165,7 +165,7 @@ header {
   /* background-color: aliceblue; */
   display: flex;
   align-items: center;
-  cursor: url('../minesweeper_my-version/bomb_cur.png'), pointer;
+  cursor: url('../src/bomb_cur.png'), pointer;
 }
 
 .logo img {
