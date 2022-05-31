@@ -1,0 +1,417 @@
+/* 
+
+                            TABLE OF CONTENTS
+
+                  1. DARK-LIGHT THEME COLORS
+                  2. HEADER STYLING
+                      2.1. MENU STYLING
+                            2.1.1. MENU ICON STYLING
+                            2.1.2. MENU STYLING
+                      2.2. LOGO AND GAME NAME STYLING
+                      2.3. DARK-LIGHT THEME BUTTON STYLING
+                  3. MEDIA QUERIES
+
+
+*/
+
+/* 2. HEADER STYLING */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(109, 102, 102);
+  transition: background-color 0.3s ease-in-out;
+  /* box-shadow: 0px 3px 5px rgb(83, 78, 78); */
+  user-select: none;
+  z-index: 2;
+}
+
+/* 2.1. MENU STYLING */
+.menu {
+  width: auto;
+  height: inherit;
+}
+
+/* 2.1.1. MENU ICON STYLING */
+.menu-icon {
+  height: inherit;
+  margin-left: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon > svg {
+  border-radius: 5px;
+  padding: 0.2rem;
+  width: 40px;
+  height: 40px;
+  fill: var(--color-text);
+  cursor: pointer;
+  transition:
+    fill 0.3s ease-in-out,
+    transform 0.3s ease;
+}
+
+.menu-icon> svg:hover {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+/* 2.1.2. MENU STYLING */
+.menu-content {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  background-color: var(--color-secondary);
+  width: 250px;
+  height: 0;
+  border-bottom-right-radius: 10px;
+  transition:
+    background-color 0.3s ease-in-out,
+    /* top 0.1s ease 0.3s, */
+    height 0.5s ease;
+  overflow: hidden;
+  /* box-shadow:
+    0px 3px 5px rgb(83, 78, 78),
+    3px 1px 5px rgb(83, 78, 78),
+    3px 3px 8px rgb(83, 78, 78); */
+  border-bottom: 1px solid rgb(109, 102, 102);
+  border-right: 1px solid rgb(109, 102, 102);
+}
+
+.menu.open .menu-content {
+  height: 185px;
+  top: calc(100% + 1px);
+}
+
+.menu-content .option {
+  width: max-content;
+  height: 80px;
+  font-size: 1.3rem;
+  color: var(--color-text);
+  position: relative;
+  /* background-color: azure; */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  margin-left: 1rem;
+}
+
+.menu-content .option:first-child {
+  margin-top: 1rem;
+}
+
+.menu-content .option .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-content .option:first-child .icon > svg {
+  width: 50px;
+  height: 50px;
+}
+
+.menu-content .option .icon > svg {
+  width: 35px;
+  height: 35px;
+  fill: var(--color-text);
+  transition: fill 0.3s ease-in-out;
+}
+
+.menu-content .option:first-child .icon > svg > path {
+  transform: translate(0, 20px);
+}
+
+.menu-content .option:nth-child(2) .icon > svg {
+  transform: translate(8px, 16px);
+}
+
+.menu-content .option .title {
+  position: absolute;
+  left: 50px;
+  padding-left: 15px;
+  top: 0;
+  display: block;
+  height: 70px;
+  width: max-content;
+  line-height: 70px;
+  font-style: italic;
+  /* background-color: aliceblue; */
+  transition: transform 0.3s ease-in-out;
+  user-select: none;
+}
+
+.menu-content .option:hover .title {
+  transform: translateX(5px);
+}
+
+.menu-content .option:hover .icon {
+  transform: rotate(-5deg) scale(1.1);
+}
+
+/* 2.2. LOGO AND GAME NAME STYLING */
+.logo {
+  width: max-content;
+  height: inherit;
+  /* background-color: aliceblue; */
+  display: flex;
+  align-items: center;
+  cursor: url('../minesweeper_my-version/bomb_cur.png'), pointer;
+}
+
+.logo img {
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover img {
+  transform: rotate(-5deg) scale(1.15);
+}
+
+.logo .game-name {
+  font-family: 'Chewy', cursive;
+  font-size: 2.5rem;
+  margin: 0 .8rem;
+  color: var(--color-text);
+  letter-spacing: 2px;
+  user-select: none;
+  transition: color 0.3s ease-in-out;
+}
+
+/* 2.3. DARK-LIGHT THEME BUTTON STYLING */
+.dark-light-theme {
+  width: 70px;
+  height: 36px;
+  position: relative;
+  /* background-color: aliceblue; */
+  margin-right: 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.dark-light-theme .bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 60px;
+  height: 22px;
+  background-color: var(--color-bar);
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dark-light-theme .circle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -5%;
+  /* left: 0; */
+  width: 35px;
+  height: 35px;
+  background-color: var(--color-circle);
+  border-radius: 50%;
+  transition:
+    left 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+#sun {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#moon, #sun {
+  transition: transform 0.3s ease-in-out;
+}
+
+body.light .dark-light-theme .circle {
+  left: 45%;
+}
+
+.dark-light-theme .circle > #moon {
+  transform: translate(1px, 1px) scale(1);
+}
+
+body.light .dark-light-theme .circle > #moon {
+  transform: scale(0);
+}
+
+.dark-light-theme .circle > #sun {
+  transform: scale(0);
+}
+
+body.light .dark-light-theme .circle > #sun {
+  transform: scale(0.7);
+}
+
+/* 3. MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 900px) {
+  /* menu  */
+  .menu-content .option {
+    font-size: 1.15rem;
+  }
+  .menu-content .option:first-child .icon > svg {
+    width: 42px;
+    height: 42px;
+  }
+  .menu-content .option .icon > svg {
+    width: 28px;
+    height: 28px;
+  }
+  .menu-content .option .icon {
+    width: 45px;
+    height: 45px;
+  }
+  .menu-content .option:first-child .icon > svg > path {
+    transform: translate(30px, 50px);
+  }
+  .menu-content .option .title {
+    height: 60px;
+    line-height: 60px;
+    left: 45px;
+    padding-left: 15px;
+  }
+  .menu-content .option:nth-child(2) .icon > svg {
+    transform: translate(9px, 15px);
+  }
+  .menu-content .option {
+    height: 65px;
+    margin-left: 0.8rem;
+  }
+  .menu-content .option:first-child {
+    margin-top: 0.8rem;
+  }
+  .menu-content {
+    width: 215px;
+  }
+  .menu.open .menu-content {
+    height: 155px;
+  }
+  .menu-icon > svg {
+    width: 35px;
+    height: 35px;
+  }
+  /* header height and logo */
+  :root {
+    --header-height: 60px;
+  }
+  .logo .game-name {
+    font-size: 2.1rem;
+  }
+  .logo img {
+    height: 35px;
+  }
+  /* dark-light theme */
+  .dark-light-theme {
+    width: 65px;
+    height: 35px;
+    margin-right: .8rem;
+  }
+  .dark-light-theme .bar {
+    width: 52px;
+    height: 20px;
+  }
+  .dark-light-theme .circle {
+    width: 32px;
+    height: 32px;
+  }
+  body.light .dark-light-theme .circle {
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* menu  */
+  .menu-content .option {
+    font-size: 1rem;
+  }
+  .menu-content .option:first-child .icon > svg {
+    width: 38px;
+    height: 38px;
+  }
+  .menu-content .option .icon > svg {
+    width: 26px;
+    height: 26px;
+  }
+  .menu-content .option .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .menu-content .option:first-child .icon > svg > path {
+    transform: translate(30px, 30px);
+  }
+  .menu-content .option .title {
+    height: 50px;
+    line-height: 50px;
+    left: 36px;
+    padding-left: 16px;
+  }
+  .menu-content .option:nth-child(2) .icon > svg {
+    transform: translate(9px, 12px);
+  }
+  .menu-content .option {
+    height: 60px;
+    margin-left: 0.6rem;
+  }
+  .menu-content .option:first-child {
+    margin-top: 0.6rem;
+  }
+  .menu-content {
+    width: 180px;
+  }
+  .menu.open .menu-content {
+    height: 135px;
+  }
+  /* header height */
+  :root {
+    --header-height: 120px;
+  }
+  .menu, .dark-light-theme, .logo {
+    position: absolute;
+    height: 60px;
+  }
+  .menu {
+    left: 0;
+    bottom: 0;
+  }
+  .dark-light-theme {
+    right: 0;
+    bottom: .6rem;
+  }
+  .logo {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  .logo .game-name {
+    font-size: 2rem;
+    margin: 0 .4rem;
+  }
+  .logo img {
+    height: 32px;
+  }
+  .dark-light-theme {
+    width: 65px;
+    height: 35px;
+    margin-right: .5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+}
