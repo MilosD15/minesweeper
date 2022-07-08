@@ -304,13 +304,13 @@ const renderProperBoardSizeMenuImage = () => {
   );
 
   if (document.body.classList.contains('light')) {
-    boardSizeImage12x12Element.src = './src/12x12-board-lighter.PNG';
-    boardSizeImage9x9Element.src = './src/9x9-board-lighter.PNG';
-    boardSizeImage6x6Element.src = './src/6x6-board-lighter.PNG';
+    boardSizeImage12x12Element.src = './12x12-board-lighter.PNG';
+    boardSizeImage9x9Element.src = './9x9-board-lighter.PNG';
+    boardSizeImage6x6Element.src = './6x6-board-lighter.PNG';
   } else {
-    boardSizeImage12x12Element.src = './src/12x12-board.PNG';
-    boardSizeImage9x9Element.src = './src/9x9-board.PNG';
-    boardSizeImage6x6Element.src = './src/6x6-board.PNG';
+    boardSizeImage12x12Element.src = './12x12-board.f79af9fa.PNG';
+    boardSizeImage9x9Element.src = './9x9-board.4b85b78f.PNG';
+    boardSizeImage6x6Element.src = './6x6-board.f4e21d01.PNG';
   }
 };
 
