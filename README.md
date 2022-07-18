@@ -22,33 +22,6 @@ with all major modern browsers. 🔥
 Play the game now! -> [modernminesweeper.netlify.app](https://modernminesweeper.netlify.app/)
 
 
-## Run Locally 🏠
-
-Clone the project
-
-```bash
-  git clone https://github.com/MilosD15/Minesweeper.git
-```
-
-Go to the project directory
-
-```bash
-  cd Minesweeper
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-
 ## Technologies 😃
 
 - HTML
