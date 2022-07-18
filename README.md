@@ -27,4 +27,6 @@ Play the game now! -> [modernminesweeper.netlify.app](https://modernminesweeper.
 - HTML
 - CSS
 - JavaScript
+- Google Fonts API
+- Netlify
 
